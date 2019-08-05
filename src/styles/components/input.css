@@ -1,0 +1,13 @@
+.input {
+    margin-bottom: 2rem;
+}
+
+.input .input-value {
+    text-align: center;
+}
+
+/* Validation */
+.input .input-value:out-of-range {
+    background-color: lightcoral;
+
+}

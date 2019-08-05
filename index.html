@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualization</title>
+    <link rel="stylesheet" href="./src/styles/vendor/reset.css">
+    <link rel="stylesheet" href="./src/styles/index.css">
+    <script src="./dist/index.js" type="module"></script>
+</head>
+
+<body>
+    <header class="header">
+        <p class="header-title">Sorting Visualization</p>
+    </header>
+    <main>
+        <section class="l-diagram-container">
+            <!-- Count Input -->
+            <div class="input">
+                <label class="input-label" for="itemsCount">Number of array items (2-30):</label>
+                <input class="input-value js-input-number" type="number" id="itemsCount" min="2" max="30">
+            </div>
+
+            <!-- Dropdown -->
+            <select class="dropdown js-sort-dropdown">
+                <option value="">--Please choose an option--</option>
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+            </select>
+
+            <!-- Diagram -->
+            <div class="js-diagram-chart"></div>
+
+            <!-- Start -->
+            <button class="button js-sort-button">Sort</button>
+        </section>
+    </main>
+</body>
+
+</html>
