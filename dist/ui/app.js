@@ -20,12 +20,13 @@ const ELEMENTS = {
 export class App {
     constructor(document) {
         this.document = document;
+        this._array = [];
     }
     set array(value) {
-        this.array = value;
+        this._array = value;
     }
     get array() {
-        return this.array;
+        return this._array;
     }
     start() {
         const numberInput = ELEMENTS.numberInput(this.document);

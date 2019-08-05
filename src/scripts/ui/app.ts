@@ -13,14 +13,16 @@ const ELEMENTS = {
 };
 
 export class App {
+    private _array: number[] = [];
+
     constructor(private document: Document) { }
 
     set array(value: number[]) {
-        this.array = value;
+        this._array = value;
     }
 
     get array() {
-        return this.array;
+        return this._array;
     }
 
     start() {
