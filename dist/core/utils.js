@@ -1,5 +1,5 @@
-function* generateArrayValue(count) {
-    for (let i = 1; i <= count; i += 1) {
+function* range(from, to) {
+    for (let i = from; i <= to; i += 1) {
         yield i;
     }
 }
@@ -15,10 +15,10 @@ function shuffleArray(array) {
     return shuffledArray;
 }
 export function generateArray(length) {
-    const array = [...generateArrayValue(length)];
+    const array = [...range(1, length)];
     return shuffleArray(array);
 }
-export function timer(ms) {
+export function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 //# sourceMappingURL=utils.js.map

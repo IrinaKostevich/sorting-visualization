@@ -1,9 +1,8 @@
-export function* selectionSort(array) {
+export const selectionSort = function* (array) {
     const sortedArray = [...array];
-    let shuffleNeeded;
     for (let j = 0; j < sortedArray.length - 1; j += 1) {
         let minIndex = j;
-        shuffleNeeded = false;
+        let swapNeeded = false;
         for (let i = j + 1; i < sortedArray.length; i += 1) {
             if (sortedArray[i] < sortedArray[minIndex]) {
                 minIndex = i;
@@ -11,9 +10,9 @@ export function* selectionSort(array) {
         }
         if (minIndex !== j) {
             [sortedArray[j], sortedArray[minIndex]] = [sortedArray[minIndex], sortedArray[j]];
-            shuffleNeeded = true;
+            swapNeeded = true;
         }
-        yield { index1: j, index2: minIndex, shuffleNeeded };
+        yield { index1: j, index2: minIndex, swapNeeded };
     }
-}
+};
 //# sourceMappingURL=selection-sort.js.map

@@ -4,8 +4,8 @@ export function generateDiagramItemsList(array) {
     diagramItemsList.classList.add('diagram');
     const items = array.map((value, index) => {
         return `<li class="diagram-item" data-order="${index}">
-                    <div class="item-pipe" data-value="${value}" style="height: ${value * 10}px"></div>
-                    <div class="item-value">${value}</div>
+                    <div class="diagram-item-pipe" data-value="${value}" style="height: ${value * 10}px"></div>
+                    <div class="diagram-item-value">${value}</div>
                 </li>`;
     });
     diagramItemsList.innerHTML = items.join('\n');
@@ -25,7 +25,7 @@ export function hideComparingItems(item1, item2) {
     moveItemToBase(item1);
     moveItemToBase(item2);
 }
-export function swithchTwoDiagramItems(item1, item2) {
+export function swapDiagramItems(item1, item2) {
     [item1.innerHTML, item2.innerHTML] = [item2.innerHTML, item1.innerHTML];
 }
 //# sourceMappingURL=diagram.js.map
