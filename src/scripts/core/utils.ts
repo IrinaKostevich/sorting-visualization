@@ -1,5 +1,5 @@
-function* generateArrayValue(count: number): IterableIterator<number> {
-    for (let i = 1; i <= count; i += 1) {
+function* range(from: number, to: number): IterableIterator<number> {
+    for (let i = from; i <= to; i += 1) {
         yield i;
     }
 }
@@ -20,11 +20,11 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function generateArray(length: number): number[] {
-    const array: number[] = [...generateArrayValue(length)];
+    const array: number[] = [...range(1, length)];
 
     return shuffleArray(array);
 }
 
-export function timer(ms: number) {
+export function wait(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }

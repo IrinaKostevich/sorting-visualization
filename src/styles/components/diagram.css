@@ -13,21 +13,21 @@
     margin-right: 0.5rem;
 }
 
-.diagram .diagram-item .item-pipe {
+.diagram .diagram-item .diagram-item-pipe {
     width: 25px;
     background-color: lightblue;
     margin-bottom: 0.5rem;
 }
 
-.diagram .diagram-item .item-value {
+.diagram .diagram-item .diagram-item-value {
     text-align: center;
 }
 
 /* Pipe variations */
-.diagram .diagram-item .item-pipe.item-pipe--active {
+.diagram .diagram-item .diagram-item-pipe.diagram-item-pipe--active {
     background-color: lightsalmon;
 }
-.diagram .diagram-item .item-pipe.item-pipe--sorted {
+.diagram .diagram-item .diagram-item-pipe.diagram-item-pipe--sorted {
     background-color: lightgrey;
 }
 
@@ -37,6 +37,6 @@
     top: -50px;
 }
 
-.diagram .diagram-item.diagram-item--up .item-pipe {
+.diagram .diagram-item.diagram-item--up .diagram-item-pipe {
     background-color: gold;
 }
