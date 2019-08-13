@@ -20,11 +20,11 @@ export class App {
         this._array = value;
     }
 
-    get array() {
+    get array(): number[] {
         return this._array;
     }
 
-    start() {
+    start(): void {
         const numberInput: HTMLElement = ELEMENTS.numberInput(this.document);
         const form: HTMLElement = ELEMENTS.form(this.document);
 
@@ -32,11 +32,11 @@ export class App {
         form.addEventListener('submit', this.onSubmit.bind(this));
     }
 
-    checkFormValidity() {
+    checkFormValidity(): boolean {
         return ELEMENTS.form(this.document).checkValidity();
     }
 
-    onNumberChange(event: Event) {
+    onNumberChange(event: Event): void {
         const arrayItemsCount: number = (<HTMLInputElement>event.target).valueAsNumber;
 
         if (!this.checkFormValidity()) return;
@@ -49,7 +49,7 @@ export class App {
         updateElementContent(diagramChart, [diagramItemsList]);
     }
 
-    onSubmit(event: Event) {
+    onSubmit(event: Event): void {
         event.preventDefault();
 
         const sortingType: SortingType = ELEMENTS.sortDropdown(this.document).value as SortingType;
@@ -57,7 +57,7 @@ export class App {
         this.sortArray(sortingType, this.array);
     }
 
-    async sortArray(sortingType: SortingType, array: number[]) {
+    async sortArray(sortingType: SortingType, array: number[]): Promise<void> {
         const sortFunction: SortingFn = sortMap.get(sortingType) as SortingFn;
 
         for (const { index1, index2, swapNeeded } of sortFunction(array)) {
