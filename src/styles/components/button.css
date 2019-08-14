@@ -1,0 +1,14 @@
+.button {
+    display: block;
+    padding: 1rem 2rem;
+    border: 1px solid cornflowerblue;
+    border-radius: 0.5rem;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px cornflowerblue;
+}

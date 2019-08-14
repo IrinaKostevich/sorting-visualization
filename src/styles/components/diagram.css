@@ -1,0 +1,42 @@
+.diagram {
+    display: flex;
+    padding: 2rem 1rem;
+    border: 1px solid gray;
+    /* overflow: auto; */
+}
+
+.diagram .diagram-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.diagram .diagram-item .diagram-item-pipe {
+    width: 25px;
+    background-color: lightblue;
+    margin-bottom: 0.5rem;
+}
+
+.diagram .diagram-item .diagram-item-value {
+    text-align: center;
+}
+
+/* Pipe variations */
+.diagram .diagram-item .diagram-item-pipe.diagram-item-pipe--active {
+    background-color: lightsalmon;
+}
+.diagram .diagram-item .diagram-item-pipe.diagram-item-pipe--sorted {
+    background-color: lightgrey;
+}
+
+/* Move Items */
+.diagram .diagram-item.diagram-item--up {
+    position: relative;
+    top: -50px;
+}
+
+.diagram .diagram-item.diagram-item--up .diagram-item-pipe {
+    background-color: gold;
+}

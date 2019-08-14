@@ -1,0 +1,7 @@
+.l-diagram-container {
+    padding: 2rem;
+}
+
+.l-diagram-container > * {
+    margin-bottom: 2rem;
+}
