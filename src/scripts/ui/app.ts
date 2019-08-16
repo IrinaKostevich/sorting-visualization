@@ -13,6 +13,7 @@ const ELEMENTS = {
 
 export class App {
     private _array: number[] = [];
+    private _isSortingRunning: boolean = false;
 
     constructor(private document: Document) { }
 
@@ -52,9 +53,13 @@ export class App {
     onSubmit(event: Event): void {
         event.preventDefault();
 
-        const sortingType: SortingType = ELEMENTS.sortDropdown(this.document).value as SortingType;
+        if (!this._isSortingRunning) {
+            this._isSortingRunning = true;
 
-        this.sortArray(sortingType, this.array);
+            const sortingType: SortingType = ELEMENTS.sortDropdown(this.document).value as SortingType;
+
+            this.sortArray(sortingType, this.array);
+        }
     }
 
     async sortArray(sortingType: SortingType, array: number[]): Promise<void> {
@@ -63,14 +68,16 @@ export class App {
         for (const { index1, index2, swapNeeded } of sortFunction(array)) {
             const item1: HTMLElement = this.document.querySelector(`li[data-order='${index1}']`) as HTMLElement;
             const item2: HTMLElement = this.document.querySelector(`li[data-order='${index2}']`) as HTMLElement;
-    
+
             showComparingItems(item1, item2);
-    
+
             await wait(1000);
             if (swapNeeded) swapDiagramItems(item1, item2);
-    
+
             await wait(1000);
             hideComparingItems(item1, item2);
         }
+
+        this._isSortingRunning = false;
     }
 }
