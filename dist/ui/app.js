@@ -21,6 +21,7 @@ export class App {
     constructor(document) {
         this.document = document;
         this._array = [];
+        this._isSortingRunning = false;
     }
     set array(value) {
         this._array = value;
@@ -48,8 +49,11 @@ export class App {
     }
     onSubmit(event) {
         event.preventDefault();
-        const sortingType = ELEMENTS.sortDropdown(this.document).value;
-        this.sortArray(sortingType, this.array);
+        if (!this._isSortingRunning) {
+            this._isSortingRunning = true;
+            const sortingType = ELEMENTS.sortDropdown(this.document).value;
+            this.sortArray(sortingType, this.array);
+        }
     }
     sortArray(sortingType, array) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -64,6 +68,7 @@ export class App {
                 yield wait(1000);
                 hideComparingItems(item1, item2);
             }
+            this._isSortingRunning = false;
         });
     }
 }
